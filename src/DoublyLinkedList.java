@@ -36,7 +36,9 @@ public class DoublyLinkedList {
 
     }
 
-    
+    public void Destroy(Node list){
+        
+    }
 
 
 
