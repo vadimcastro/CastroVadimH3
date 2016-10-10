@@ -28,8 +28,11 @@ public class DoublyLinkedList {
 
     }
 
-    
+    public void TravBack(Node list){
 
+    }
+
+    
 
 
 
