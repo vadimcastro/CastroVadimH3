@@ -3,7 +3,15 @@
  */
 public class DoublyLinkedList {
 
-    Node head;
+    public class List{
+        Node head;
+
+        List(){
+            this.head = null;
+        }
+
+    }
+
 
 
     public class Node {
