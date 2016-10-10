@@ -32,6 +32,10 @@ public class DoublyLinkedList {
 
     }
 
+    public void DeleteNode(String s, Node list){
+
+    }
+
     
 
 
