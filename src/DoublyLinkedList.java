@@ -3,14 +3,24 @@
  */
 public class DoublyLinkedList {
 
-    public class List{
-        Node head;
+    Node head;
+    Node tail;
 
-        List(){
-            this.head = null;
-        }
+
+    public DoublyLinkedList() {
+        this.head = null;
+        this.tail = null;
 
     }
+
+
+
+    public boolean isEmpty(){
+        return head == null;
+    }
+
+
+
 
 
 
@@ -18,10 +28,16 @@ public class DoublyLinkedList {
 
         private String value;
         private Node next;
+        private Node prev;
 
-        public Node(String val, Node n){
+        public Node(String val, Node n, Node p){
             this.value = val;
             this.next = n;
+            this.prev = p;
+        }
+
+        public Node(String x){
+            this.value = x;
         }
 
         public String getValue(){
@@ -30,6 +46,22 @@ public class DoublyLinkedList {
 
         public Node getNext(){
             return this.next;
+        }
+
+        public Node getPrev(){
+            return this.prev;
+        }
+
+        public void setValue(String x){
+            this.value = x;
+        }
+
+        public void setNext(Node n){
+            this.next = n;
+        }
+
+        public void setPrev(Node p){
+            this.prev = p;
         }
 
 
@@ -42,6 +74,22 @@ public class DoublyLinkedList {
 
     public void AlphaInsert(Node list){
 
+        Node current = head;
+
+        while (current != null){
+
+            if ((list.value.compareTo(current.value) > 0) || (list.value.compareTo(current.value) == 0)){
+                current.next = list;
+                list.prev = current;
+            }
+
+            else if (list.value.compareTo(current.value) < 0){
+                current.prev = list;
+                list.next = current;
+            }
+
+            current = current.next;
+        }
     }
 
     public Node FindNode(Node list) {
