@@ -20,6 +20,10 @@ public class DoublyLinkedList {
 
     }
 
+    public Node FindNode(Node list) {
+        return list;
+    }
+
 
 
 
