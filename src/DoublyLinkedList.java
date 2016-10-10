@@ -3,12 +3,28 @@
  */
 public class DoublyLinkedList {
 
+    Node head;
+
+
     public class Node {
 
-        public Node(int val, Node n){
-            int value = val;
-            Node next = n;
+        private String value;
+        private Node next;
+
+        public Node(String val, Node n){
+            this.value = val;
+            this.next = n;
         }
+
+        public String getValue(){
+            return this.value;
+        }
+
+        public Node getNext(){
+            return this.next;
+        }
+
+
     }
 
     /**
@@ -37,7 +53,7 @@ public class DoublyLinkedList {
     }
 
     public void Destroy(Node list){
-        
+
     }
 
 
