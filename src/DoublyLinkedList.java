@@ -24,7 +24,11 @@ public class DoublyLinkedList {
         return list;
     }
 
+    public void TravFor(Node list){
 
+    }
+
+    
 
 
 
