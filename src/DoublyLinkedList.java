@@ -112,6 +112,22 @@ public class DoublyLinkedList {
 
     }
 
+    public void main(String[] args){
+
+        DoublyLinkedList one = new DoublyLinkedList();
+
+        Node two = new Node("Apples");
+        Node three = new Node("Beets");
+        Node four = new Node("Carrots");
+
+        one.AlphaInsert(two);
+        one.AlphaInsert(three);
+        one.AlphaInsert(four);
+
+        System.out.println(one);
+
+    }
+
 
 
 }
