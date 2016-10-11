@@ -1,6 +1,8 @@
 /**
  * Created by vadimcastro on 10/9/16.
  */
+
+
 public class DoublyLinkedList {
 
     Node head;
@@ -8,126 +10,69 @@ public class DoublyLinkedList {
 
 
     public DoublyLinkedList() {
-        this.head = null;
-        this.tail = null;
+        head = null;
+        tail = null;
 
     }
 
-
-
-    public boolean isEmpty(){
-        return head == null;
-    }
-
-
-
-
-
-
-    public class Node {
-
-        private String value;
-        private Node next;
-        private Node prev;
-
-        public Node(String val, Node n, Node p){
-            this.value = val;
-            this.next = n;
-            this.prev = p;
-        }
-
-        public Node(String x){
-            this.value = x;
-        }
-
-        public String getValue(){
-            return this.value;
-        }
-
-        public Node getNext(){
-            return this.next;
-        }
-
-        public Node getPrev(){
-            return this.prev;
-        }
-
-        public void setValue(String x){
-            this.value = x;
-        }
-
-        public void setNext(Node n){
-            this.next = n;
-        }
-
-        public void setPrev(Node p){
-            this.prev = p;
-        }
-
-
-    }
 
     /**
      * AlphaInsert method inserts a new node into an existing list in alphabetical order
-     * @param list the list for the node to be inserted into
+     *
+     * @param x the string to be inserted
      */
 
-    public void AlphaInsert(Node list){
+    public void AlphaInsert(String x) {
+
+        Node test = new Node(x);
 
         Node current = head;
 
-        while (current != null){
 
-            if ((list.value.compareTo(current.value) > 0) || (list.value.compareTo(current.value) == 0)){
-                current.next = list;
-                list.prev = current;
-            }
-
-            else if (list.value.compareTo(current.value) < 0){
-                current.prev = list;
-                list.next = current;
-            }
-
-            current = current.next;
+        if (current == null){
+            head = test;
+            tail = head;
         }
+
+        while (current != null) {
+
+            if (((x.compareTo(current.value) < 0) || (x.compareTo(current.value) == 0))) {
+                current.next = test;
+                test.prev = current;
+            }
+
+            else if (x.compareTo(current.value) > 0) {
+                current.prev = test;
+                test.next = current;
+
+            }
+
+            current = current.getNext();
+
+
+        }
+
+
+
     }
 
     public Node FindNode(Node list) {
         return list;
     }
 
-    public void TravFor(Node list){
+    public void TravFor(Node list) {
 
     }
 
-    public void TravBack(Node list){
+    public void TravBack(Node list) {
 
     }
 
-    public void DeleteNode(String s, Node list){
+    public void DeleteNode(String s, Node list) {
 
     }
 
-    public void Destroy(Node list){
+    public void Destroy(Node list) {
 
     }
-
-    public void main(String[] args){
-
-        DoublyLinkedList one = new DoublyLinkedList();
-
-        Node two = new Node("Apples");
-        Node three = new Node("Beets");
-        Node four = new Node("Carrots");
-
-        one.AlphaInsert(two);
-        one.AlphaInsert(three);
-        one.AlphaInsert(four);
-
-        System.out.println(one);
-
-    }
-
-
-
 }
