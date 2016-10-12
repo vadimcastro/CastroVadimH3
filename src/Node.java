@@ -3,54 +3,47 @@
  */
 
 
-public class Node {
+class Node {
 
-    public String value;
-    public Node next;
-    public Node prev;
+    String value;
+    Node next;
+    Node prev;
 
     public Node() {
-        value = null;
-        next = null;
-        prev = null;
+        this(null,null,null); }
 
+
+    Node(String val, Node n, Node p) {
+        this.value = val;
+        this.next = n;
+        this.prev = p;
     }
 
+    Node(String x) {
+        this(x,null,null); }
 
-    public Node(String val, Node n, Node p) {
-        value = val;
-        next = n;
-        prev = p;
+    String getValue() {
+        return this.value;
     }
 
-    public Node(String x) {
-        value = x;
-        next = null;
-        prev = null;
+    Node getNext() {
+        return this.next;
     }
 
-    public String getValue() {
-        return value;
-    }
-
-    public Node getNext() {
-        return next;
-    }
-
-    public Node getPrev() {
-        return prev;
+    Node getPrev() {
+        return this.prev;
     }
 
     public void setValue(String x) {
-        value = x;
+        this.value = x;
     }
 
-    public void setNext(Node n) {
-        next = n;
+    void setNext(Node n) {
+        this.next = n;
     }
 
-    public void setPrev(Node p) {
-        prev = p;
+    void setPrev(Node p) {
+        this.prev = p;
     }
 
 

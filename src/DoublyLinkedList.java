@@ -3,13 +3,13 @@
  */
 
 
-public class DoublyLinkedList {
+class DoublyLinkedList {
 
     Node head;
     Node tail;
 
 
-    public DoublyLinkedList() {
+    DoublyLinkedList() {
         head = null;
         tail = null;
 
@@ -25,36 +25,83 @@ public class DoublyLinkedList {
     public void AlphaInsert(String x) {
 
         Node test = new Node(x);
-
         Node current = head;
 
-
-        if (current == null){
-            head = test;
+        if (current == null) {
+            head = new Node(test.getValue());
             tail = head;
-        }
-
-        while (current != null) {
-
-            if (((x.compareTo(current.value) < 0) || (x.compareTo(current.value) == 0))) {
-                current.next = test;
-                test.prev = current;
-            }
-
-            else if (x.compareTo(current.value) > 0) {
-                current.prev = test;
-                test.next = current;
-
-            }
-
-            current = current.getNext();
 
 
         }
 
+        else {
+
+            while (current != null) {
+
+                if (test.getValue().compareTo(current.getValue()) > 0) {
 
 
+                    if (current.getPrev() != null) {
+                        Node n = new Node(test.getValue(), current, current.getPrev());
+                        current.getPrev().setNext(n);
+                        current.setPrev(n);
+                    }
+
+                    else {
+                        Node n = new Node(test.getValue(), current, null);
+                        current.setPrev(n);
+                        head = n;
+                    }
+
+
+
+
+
+                } else if ((test.getValue().compareTo(current.getValue()) == 0 && current.getNext() != null)) {
+
+
+                    if (current.getNext().getValue().compareTo(test.getValue()) < 0) {
+                        Node n = new Node(test.getValue(), current.getNext(), current);
+                        current.getNext().setPrev(n);
+                        current.setNext(n);
+                    }
+
+                    current = current.getNext();
+
+
+
+                } else if ((test.getValue().compareTo(current.getValue()) == 0 && current.getNext() == null)) {
+                    Node n = new Node(test.getValue(), null, current);
+                    current.setNext(n);
+                    tail = n;
+                    current = null;
+
+
+
+                } else if ((test.getValue().compareTo(current.getValue()) < 0) && current.getNext() == null) {
+
+                    Node n = new Node(test.getValue(), null, current);
+
+                    current.setNext(n);
+                    tail = n;
+                    current = null;
+
+
+                }
+
+                else {
+                    current = current.getNext();
+                }
+
+
+
+
+
+            }
+
+        }
     }
+
 
     public Node FindNode(Node list) {
         return list;
