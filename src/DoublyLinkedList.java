@@ -53,9 +53,7 @@ class DoublyLinkedList {
                         head = n;
                     }
 
-
-
-
+                    current = null;
 
                 } else if ((test.getValue().compareTo(current.getValue()) == 0 && current.getNext() != null)) {
 
@@ -92,9 +90,6 @@ class DoublyLinkedList {
                 else {
                     current = current.getNext();
                 }
-
-
-
 
 
             }
