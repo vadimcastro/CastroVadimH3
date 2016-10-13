@@ -147,7 +147,52 @@ class DoublyLinkedList {
 
     }
 
-    public void DeleteNode(String s, Node list) {
+    public void DeleteNode(String s) {
+
+        Node current = head;
+
+        boolean flag = false;
+
+        while (current != null){
+            if(current.getValue().equalsIgnoreCase(s)){
+
+                Node prev = current.getPrev();
+                Node nex = current.getNext();
+
+                if(current.getPrev() == null && current.getNext() != null){
+                    head = current.getNext();
+                    head.setPrev(null);
+                }
+                else if(current.getPrev() == null && current.getNext() == null){
+                    current = new Node();
+                    head = current;
+                }
+                else if(current.getNext() == null) {
+                    current.getPrev().setNext(null);
+                }
+                else{
+                    current.getPrev().setNext(nex);
+                    current.getNext().setPrev(prev);
+                }
+
+                flag = true;
+
+                break;
+            }
+            else{
+                current = current.getNext();
+            }
+        }
+
+        if(flag == true){
+            System.out.println("Node successfully deleted!");
+        }
+
+        else{
+            System.out.println("Node did not exist");
+        }
+
+
 
     }
 

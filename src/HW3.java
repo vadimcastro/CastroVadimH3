@@ -35,6 +35,12 @@ public class HW3 {
 
         one.TravBack();
 
+        String input5 = JOptionPane.showInputDialog(null,"Enter the node you are trying to delete");
+
+        one.DeleteNode(input5);
+
+        one.TravFor();
+
 
 
     }
