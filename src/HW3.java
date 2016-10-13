@@ -25,6 +25,12 @@ public class HW3 {
             start = start.getNext();
         }
 
+        String input4 = JOptionPane.showInputDialog(null,"Which string are you trying to find?");
+
+        Node s = new Node(input4);
+
+        one.FindNode(s);
+
 
 
     }

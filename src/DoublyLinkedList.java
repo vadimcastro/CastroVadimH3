@@ -38,7 +38,7 @@ class DoublyLinkedList {
 
             while (current != null) {
 
-                if (test.getValue().compareTo(current.getValue()) > 0) {
+                if (test.getValue().compareTo(current.getValue()) < 0) {
 
 
                     if (current.getPrev() != null) {
@@ -58,7 +58,7 @@ class DoublyLinkedList {
                 } else if ((test.getValue().compareTo(current.getValue()) == 0 && current.getNext() != null)) {
 
 
-                    if (current.getNext().getValue().compareTo(test.getValue()) < 0) {
+                    if (current.getNext().getValue().compareTo(test.getValue()) > 0) {
                         Node n = new Node(test.getValue(), current.getNext(), current);
                         current.getNext().setPrev(n);
                         current.setNext(n);
@@ -76,7 +76,7 @@ class DoublyLinkedList {
 
 
 
-                } else if ((test.getValue().compareTo(current.getValue()) < 0) && current.getNext() == null) {
+                } else if ((test.getValue().compareTo(current.getValue()) > 0) && current.getNext() == null) {
 
                     Node n = new Node(test.getValue(), null, current);
 
@@ -98,8 +98,31 @@ class DoublyLinkedList {
     }
 
 
-    public Node FindNode(Node list) {
-        return list;
+    public void FindNode(Node list) {
+
+        Node current = head;
+        boolean flag = false;
+
+        while (current != null){
+
+            if(list.getValue().equalsIgnoreCase(current.getValue())){
+                flag = true;
+                current = null;
+            }
+
+            else {
+                current = current.getNext();
+            }
+
+        }
+
+        if (flag == true){
+            System.out.println("The node exists!");
+        }
+        else {
+            System.out.println("The node does not exist!");
+        }
+
     }
 
     public void TravFor(Node list) {
