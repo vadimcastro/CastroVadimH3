@@ -125,11 +125,25 @@ class DoublyLinkedList {
 
     }
 
-    public void TravFor(Node list) {
+    public void TravFor() {
+
+        Node current = head;
+
+        while (current != null){
+            System.out.println(current.getValue());
+            current = current.getNext();
+        }
 
     }
 
-    public void TravBack(Node list) {
+    public void TravBack() {
+
+        Node current = tail;
+
+        while (current != null){
+            System.out.println(current.getValue());
+            current = current.getPrev();
+        }
 
     }
 

@@ -31,6 +31,10 @@ public class HW3 {
 
         one.FindNode(s);
 
+        one.TravFor();
+
+        one.TravBack();
+
 
 
     }
