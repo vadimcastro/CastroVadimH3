@@ -41,6 +41,10 @@ public class HW3 {
 
         one.TravFor();
 
+        one.Destroy();
+
+        one.TravFor();
+
 
 
     }

@@ -7,6 +7,7 @@ class DoublyLinkedList {
 
     Node head;
     Node tail;
+    int size;
 
 
     DoublyLinkedList() {
@@ -196,7 +197,53 @@ class DoublyLinkedList {
 
     }
 
-    public void Destroy(Node list) {
+    public void Destroy() {
 
+        Node current = head;
+
+        while (current != null){
+            if(current.getValue().equalsIgnoreCase(current.getValue())){
+
+                Node prev = current.getPrev();
+                Node nex = current.getNext();
+
+                if(current.getPrev() == null && current.getNext() != null){
+                    head = current.getNext();
+                    head.setPrev(null);
+                }
+                else if(current.getPrev() == null && current.getNext() == null){
+                    current = new Node();
+                    head = current;
+                }
+                else if(current.getNext() == null) {
+                    current.getPrev().setNext(null);
+                }
+                else{
+                    current.getPrev().setNext(nex);
+                    current.getNext().setPrev(prev);
+                }
+
+
+                current = current.getNext();
+            }
+
+        }
+
+
+        System.out.println("Doubly linked list succesfully destroyed!");
+
+
+    }
+
+    public int getSize(){
+
+        Node current = head;
+
+        while(current != null){
+            size++;
+            current = current.getNext();
+        }
+
+        return size;
     }
 }
