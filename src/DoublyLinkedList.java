@@ -230,7 +230,7 @@ class DoublyLinkedList {
         }
 
 
-        System.out.println("Doubly linked list succesfully destroyed!");
+        System.out.println("Doubly linked list successfully destroyed!");
 
 
     }
