@@ -7,7 +7,6 @@ class DoublyLinkedList {
 
     Node head;
     Node tail;
-    int size;
 
 
     DoublyLinkedList() {
@@ -99,6 +98,14 @@ class DoublyLinkedList {
     }
 
 
+    /**
+     * FindNode() method searches the doubly linked list for the user input node value. If found, reports success.
+     * Otherwise, reports that no such node exists.
+     *
+     * @param list the node to be found within the doubly linked list
+     */
+
+
     public void FindNode(Node list) {
 
         Node current = head;
@@ -126,6 +133,13 @@ class DoublyLinkedList {
 
     }
 
+    /**
+     * TravFor() method traverses the doubly linked list from the beginning and prints the value of each node in the process.
+     */
+
+
+
+
     public void TravFor() {
 
         Node current = head;
@@ -137,6 +151,10 @@ class DoublyLinkedList {
 
     }
 
+    /**
+     * TravBack() method traverses the doubly linked list from the end and prints the value of each node in the process.
+     */
+
     public void TravBack() {
 
         Node current = tail;
@@ -147,6 +165,13 @@ class DoublyLinkedList {
         }
 
     }
+
+    /**
+     * DeleteNode() method searches for a node that matches the user input value.
+     * If found, deletes the node and reports success.
+     * Otherwise reports that no such node exists.
+     * @param s
+     */
 
     public void DeleteNode(String s) {
 
@@ -197,6 +222,10 @@ class DoublyLinkedList {
 
     }
 
+    /**
+     * Destroy() method deletes all nodes in the doubly linked list, effectively deleteing the entire list.
+     */
+
     public void Destroy() {
 
         Node current = head;
@@ -235,15 +264,4 @@ class DoublyLinkedList {
 
     }
 
-    public int getSize(){
-
-        Node current = head;
-
-        while(current != null){
-            size++;
-            current = current.getNext();
-        }
-
-        return size;
-    }
 }
