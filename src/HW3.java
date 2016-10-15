@@ -1,13 +1,10 @@
+// Vadim Castro
+
+
 
 import javax.swing.JOptionPane;
 
 public class HW3 {
-
-    /**
-     * Main method to test all constructed methods for the DoublyLinkedList.java and Node.java classes
-     * @param args
-     */
-
 
 
     public static void main(String[] args) {
@@ -26,7 +23,7 @@ public class HW3 {
 
         while(!(option.equals("7"))){
 
-            // switch statement dictates activation of methods based on users' number choice 
+            // switch statement dictates activation of methods based on users' number choice
 
             switch(option){
 
